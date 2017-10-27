@@ -1,0 +1,11 @@
+/* --
+ * SCSS importing  all  modules,
+ * when  creating  a module make
+ * sure to add it being included
+ * here.
+ */
+
+@import 'static-photos'; /* Variable file of image adresses */
+@import 'rewrite';
+@import 'colors';
+@import 'banner';
