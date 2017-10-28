@@ -1,12 +1,125 @@
 
 
     .banner {
-        background: black;
+
+        // background: black;
         box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+        .hidden-socials {
+          display: none;
+          // margin-bottom: 20px;
+          width: 100%;
+
+          padding-left: -100px;
+          padding-right: -100px;
+
+          line-height: 14vh;
+          height: 14vh;
+          vertical-align: middle;
+
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 4;
+
+          color: lightgrey;
+          font-size: 6vh;
+          text-align: center;
+          span {
+            b, strong {
+              color: $pinker;
+            }
+            font-size: 4vh;
+
+            height: 14vh;
+            line-height: 14vh;
+            vertical-align: middle;
+          }
+          i {
+            margin-left: 10px;
+            margin-right: 10px;
+            &:hover {
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .header {
+          width: 100%;
+          z-index: 3;
+          background: rgba(0, 0, 0, 0.65);
+          min-height: 7vh;
+          top: 0;
+          position: fixed;
+
+          .branding {
+            float: left;
+            padding-left: 100px;
+            span {
+              height: 7vh;
+              line-height: 7vh;
+              vertical-align: middle;
+
+              font-size: 20px;
+              font-family: 'Pacifico';
+              color: white;
+              letter-spacing: 5px;
+            }
+          }
+          .love-site {
+            margin-right: 100px;
+            float: right;
+            font-family: 'Poppins', Arial;
+            display: none;
+
+            cursor: pointer;
+            height: 7vh;
+            line-height: 7vh;
+            vertical-align: middle;
+            background: $pinker;
+            padding-left: 25px;
+            padding-right: 25px;
+            &:hover {
+              background: $pink;
+            }
+            span {
+              color: black;
+            }
+          }
+        }
+
+        article {
+
+          h1 {
+            padding-top: 40vh;
+            font-size: 10vh;
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', Arial;
+            z-index: 5;
+            margin: 0;
+            b {
+              color: $pink;
+            }
+            small {
+              font-size: 30px;
+              b {
+                color: $pink;
+              }
+            }
+          }
+        }
+
     }
     [class*=banner-] {
+        transition: opacity 1.5s ease, visibility 1.5s;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
         background-size: cover;
         background-position: center;
+
+        opacity: 0;
+        visibility: none;
     }
 
 
@@ -15,6 +128,24 @@
     }
     .banner-2 {
         background-image: url($banner_2);
+    }
+    .banner-3 {
+        background-image: url($banner_3);
+    }
+    .banner-4 {
+        background-image: url($banner_4);
+    }
+    .banner-5 {
+        background-image: url($banner_5);
+    }
+    .banner-6 {
+        background-image: url($banner_5);
+    }
+    .banner-7 {
+        background-image: url($banner_5);
+    }
+    .banner-8 {
+        background-image: url($banner_5);
     }
     .whole {
         min-height: 100vh;
@@ -25,4 +156,8 @@
     }
     .hide {
         display: none;
+    }
+    .visible {
+        opacity: 1 !important;
+        visibility: visible !important;
     }

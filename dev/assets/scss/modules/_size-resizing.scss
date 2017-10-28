@@ -1,0 +1,102 @@
+/*From 0px-700px*/
+.hidden-socials {
+  line-height: 7vh !important;
+  span {
+    font-size: 3vh !important;
+    line-height: 7vh !important;
+  }
+  i {
+    font-size: 20px !important;
+  }
+}
+.banner {
+  article {
+    h1 {
+      font-size: 5vh !important;
+    }
+  }
+}
+.branding {
+  padding-left: 20px !important;
+}
+.love-site {
+  margin-right: 0 !important;
+}
+
+/*From 0px-400px*/
+@media only screen and (min-width: 400px) {
+
+  .hidden-socials {
+    line-height: 7vh !important;
+    span {
+      font-size: 3vh !important;
+      line-height: 7vh !important;
+    }
+    i {
+      font-size: 2vh !important;
+    }
+  }
+
+}
+
+/*From 400px-1100px*/
+@media only screen and (min-width: 700px) {
+
+  .hidden-socials {
+    line-height: 14vh !important;
+    span {
+      font-size: 3vh !important;
+      line-height: 14vh !important;
+    }
+    i {
+      font-size: 2vh !important;
+    }
+  }
+
+}
+
+
+
+/*From 1100px-1620px*/
+@media only screen and (min-width: 1100px){
+    .hidden-socials {
+      line-height: 14vh !important;
+      span {
+        font-size: 6vh !important;
+        line-height: 14vh !important;
+      }
+      i {
+        font-size: 4vh !important;
+      }
+    }
+    .banner {
+      article {
+        h1 {
+          font-size: 5vh !important;
+        }
+      }
+    }
+}
+
+
+
+/*From onwards*/
+@media only screen and (min-width: 1620px){
+  .hidden-socials {
+    line-height: 14vh !important;
+    span {
+      font-size: 6vh !important;
+      line-height: 14vh !important;
+    }
+    i {
+      font-size: 6vh !important;
+    }
+  }
+  .banner {
+    article {
+      h1 {
+        font-size: 10vh !important;
+      }
+    }
+  }
+}
