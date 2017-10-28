@@ -54,6 +54,9 @@
           .branding {
             float: left;
             padding-left: 100px;
+            b {
+              color: $pink;
+            }
             span {
               height: 7vh;
               line-height: 7vh;
@@ -139,10 +142,10 @@
         background-image: url($banner_5);
     }
     .banner-6 {
-        background-image: url($banner_5);
+        background-image: url($banner_6);
     }
     .banner-7 {
-        background-image: url($banner_5);
+        background-image: url($banner_7);
     }
     .banner-8 {
         background-image: url($banner_5);
