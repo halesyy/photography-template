@@ -40,16 +40,13 @@
       </script>
   </head>
   <body>
-    <div class="page-container">
+    <div class="Page-Landing">
       <section class="banner whole">
         <header class="header">
           <div class="hidden-socials">
             <span>Why not <b>share</b> them <b>around</b>?</span>
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <i class="fa fa-google-plus" aria-hidden="true"></i>
-            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-facebook" aria-hidden="true" onclick="window.open('https://www.facebook.com/jek.hales', '_facebook');"></i>
+            <i class="fa fa-twitter" aria-hidden="true" onclick="window.open('https://twitter.com/jeklington', '_twitter');"></i>
 
           </div>
           <div class="branding">
@@ -66,6 +63,23 @@
         <article class="banner-5 whole"><h1>Yet <b>macroscopic</b> and <b>astonishing</b></h1></article>
         <article class="banner-6 whole"><h1></h1></article>
         <article class="banner-7 whole"><h1></h1></article>
+        <nav class="bottom">
+          <a href="/submit-artwork">
+            <div class="link">
+              Submit Artwork
+            </div>
+          </a>
+          <a href="/get-started">
+            <div class="link">
+              Get Started
+            </div>
+          </a>
+          <a href="/about">
+            <div class="link">
+              About
+            </div>
+          </a>
+        </nav>
       </section>
       <section class="container-fluid">
         <div class="row">
@@ -85,20 +99,17 @@
                 <p>I set this project up so that local photographers and artists can submit their photos / artworks to get them recognized and appreciated.</p>
                 <p>To glance at our talent, click <a href="/artists"><b>here</b></a> to view a list of our current photographers and artists.</p>
               </aside>
+
+              <h3 class="boxed-title no-margin"><a href="/get-started">Want to be part of this platform and show off your work?</a></h3>
+
+              <!-- <aside class="aside">
+                <p>To submit work (as a current artist of this platform) - please click here to <a href="/submit-artwork">submit your new artwork</a>.</p>
+              </aside> -->
             </div>
 
         </div><!--end row-->
       </section>
-      <footer class="footer">
-        <p>Website designed by <b>Jack Hales</b>, you can find my developer career on <a href="https://www.github.com/halesyy" target="_social-github">GitHub</a> or <a href="https://stackoverflow.com/users/5782416/jek?tab=profile" target="_social-stackoverflow">StackOverflow</a>. </p>
-        <div class="socials">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-          <i class="fa fa-google-plus" aria-hidden="true"></i>
-          <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-        </div>
-      </footer>
+      <?=$Footer?>
     </div>
   </body>
 </html>

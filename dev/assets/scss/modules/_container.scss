@@ -47,7 +47,11 @@
           margin-top: 40px;
           font-weight: bold;
           font-family: 'Poppins', Arial;
-          color: $pink;
+          color: $pink !important;
+          a {
+            color: $pink !important; 
+            text-decoration: none;
+          }
         }
         .no-margin {
           margin-left:  0;

@@ -1,0 +1,87 @@
+
+
+    .formation {
+
+      .success, .error {
+
+          padding: 20px;
+          margin-bottom: 10px;
+          color: white;
+          font-family: 'Poppins', Arial;
+          border-radius: 2px;
+          box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+          a {
+            color: white;
+            font-weight: bold;
+          }
+
+      }
+      .success {
+
+          background: #46d646;
+
+      }
+      .error {
+
+          background: #84030f;
+
+      }
+
+
+        input[type="text"], input[type="password"], textarea {
+
+            // height: 30px;
+            border: solid silver 1px;
+            border-radius: 2px;
+            background: #f9f9f9 ;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            font-family: 'Poppins', Arial;
+
+            &:focus {
+              outline: 0;
+            }
+        }
+
+        input[type="file"] {
+
+          border: solid silver 1px;
+          border-radius: 2px;
+          background: whitesmoke;
+          width: 100%;
+          padding: 10px;
+
+        }
+
+        textarea {
+
+
+
+        }
+
+        input[type="submit"] {
+
+            box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+            background: $pink;
+            padding: 10px 30px 10px 30px;
+            border: 0;
+            font-family: 'Poppins';
+            cursor: pointer;
+            color: white;
+            border-radius: 2px;
+
+        }
+
+        .label {
+
+            font-size: 12px;
+            color: black;
+            font-family: 'Raleway';
+            width: 100%;
+
+        }
+
+
+    }

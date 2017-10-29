@@ -1,24 +1,24 @@
 .footer {
-  margin-top: 50px;
-  padding: 50px 10% 50px 10%;
-  background: #1d1d1d;
-  color: white;
-  font-family: 'Poppins';
-  b, a {
-    color: $pink;
-    font-weight: bold;
-  }
-  a:hover {
-    color: $pinker;
-    text-decoration: none;
-  }
-  i {
-    margin-right: 10px;
-    font-size: 2em;
-    color: lightgrey;
-    &:hover {
-      color: white;
-      cursor: pointer;
+    margin-top: 50px;
+    padding: 50px 10% 50px 10%;
+    background: #1d1d1d;
+    color: white;
+    font-family: 'Poppins';
+    b, a {
+      color: $pink;
+      font-weight: bold;
     }
-  }
+    a:hover {
+      color: $pinker;
+      text-decoration: none;
+    }
+    i {
+      margin-right: 10px;
+      font-size: 2em;
+      color: lightgrey;
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
 }

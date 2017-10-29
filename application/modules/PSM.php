@@ -450,9 +450,9 @@
             array_push($binder_builder, '?');
             // Builds the statement and executes.
             $statement = "INSERT INTO {$table} ({$this->implode(', ',$cols)}) VALUES ({$this->implode(',',$binder_builder)})";
+            if ($debug) { $this->Display($binds); echo $statement; }
             $q = $this->cquery($statement, $binds);
             // Debug management.
-            if ($debug) { $this->Display($binds); echo $statement; }
           }
       /*Function meant to encapsuleate the PSM state for creation on an external server.*/
       public function capsule()

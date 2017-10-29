@@ -5,6 +5,29 @@
         // background: black;
         box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
 
+        .bottom {
+          bottom: 0;
+          position: absolute;
+          z-index: 5;
+          background: #1e1e1e;
+          width: 100%;
+          overflow-y: hidden;
+          a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Poppins';
+            .link {
+              padding: 20px;
+              float: left;
+              background: #1e1e1e;
+              border-right: solid black 1px;
+              &:hover {
+                background: $pink;
+              }
+            }
+          }
+        }
+
         .hidden-socials {
           display: none;
           // margin-bottom: 20px;
@@ -44,8 +67,10 @@
         }
 
         .header {
+          box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
           width: 100%;
-          z-index: 3;
+          z-index: 6;
           background: rgba(0, 0, 0, 0.65);
           min-height: 7vh;
           top: 0;

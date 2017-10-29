@@ -1,0 +1,85 @@
+.Page-Submission {
+
+    .header {
+
+      box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+      background: rgba(0,0,0,0.65);
+      width: 100%;
+      min-height: 7vh;
+      line-height: 7vh;
+      vertical-align: middle;
+
+      .branding {
+        padding-left: 100px;
+        font-size: 20px;
+        font-family: 'Pacifico';
+        color: white;
+        letter-spacing: 5px;
+        b {
+          color: $pink !important;
+        }
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+    }
+
+    .container {
+
+        margin-top: 60px;
+        background: whitesmoke;
+        padding: 40px;
+        border-radius: 2px;
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+        .title {
+          font-family: 'Pacifico', Arial;
+          letter-spacing: 4px;
+          text-align: center;
+          margin-bottom: 50px;
+          font-size: 50px;
+          .small {
+            font-size: 18px;
+            font-family: 'Poppins';
+            letter-spacing: normal;
+            margin-top: 15px;
+          }
+          b {
+            color: $pink;
+          }
+        }
+
+        .left {
+            .inner {
+                padding: 20px;
+                box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+                background: white;
+            }
+
+            hr {
+              border-bottom: solid $pink 1px;
+              width: 95%;
+            }
+        }
+
+        .right {
+          .inner {
+            padding: 20px;
+            box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+            background: white;
+          }
+        }
+        .info-standard {
+            padding: 20px;
+            box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+            background: white;
+        }
+        .margin-bottom {
+            margin-bottom: 40px;
+        }
+
+    }
+
+}
