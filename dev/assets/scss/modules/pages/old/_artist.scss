@@ -1,0 +1,58 @@
+.Page-Artist {
+
+    font-family: 'Poppins', Arial;
+
+    .color {
+      color: $pink;
+    }
+
+    .about-fa {
+      font-size: 2em;
+      color: darken(grey, 15%);
+      cursor: pointer;
+      margin-right: 10px;
+      &:hover {
+        color: black;
+      }
+    }
+
+    .white {
+      background: white !important;
+    }
+
+    .artist-title {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .artist-bio {
+      font-size: 18px;
+      margin-bottom: 20px;
+
+    }
+    .artist-image {
+      border: 2px;
+      box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+    }
+
+    .switcher {
+      a {
+        background: $pink;
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+        color: white;
+        padding: 10px 20px 10px 20px;
+        border-radius: 2px;
+      }
+    }
+
+
+    .title {
+      font-family: 'Poppins', Arial !important;
+      font-size: 30px !important;
+      margin: 0 !important;
+      letter-spacing: normal !important;
+      text-align: left !important;
+    }
+
+}

@@ -1,31 +1,40 @@
 <?php
   $Authentication = [
 
-      'save' => function($Sunrise, $api) {
+      'artwork-note' => function($Sunrise, $api) {
           $post   = (Object) $_POST;
-          $saveto = $post->saveto;
+          $psm    = $api->psm();
 
-          if (!isset($post->name, $post->value) || empty($post->name)) $api->Error('Oops, we didn\'t recieve all the correct data...');
-          $id = $post->id;
+          $note = htmlspecialchars($post->note);
+          if (!is_numeric($post->artworkid)
+          || !$psm->hasdata("SELECT id FROM artworks WHERE id = :id", [':id' => $post->artworkid])) die;
 
-          $die = false;
-          $Object = &$api->find_object($id, $die, $saveto);
-          $Object['data'][$post->name] = $post->value;
+          $psm->insert('artwork_notes', [
+            'artwork_id' => $post->artworkid,
+            'note' => $note,
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'timeadded' => time()
+          ]);
+
+          $api->JSON();
       },
 
-      'delete' => function($Sunrise, $api) {
-          $post = (Object) $_POST;
-          $type = $post->objtype;
-          $id   = $post->id;
 
-          $sessid = $api->find_object_id($id, $type);
-          if ($sessid !== false) {
-            unset($_SESSION[ $api->conversion_s[$type] ][$sessid]);
-            $api->json([
-              'id' => $id
-            ]);
-          }
+      'flag-artwork' => function($Sunrise, $api) {
+          $post   = (Object) $_POST;
+          $psm    = $api->psm();
 
-      }
+          if (!is_numeric($post->artworkid)
+          || $psm->hasdata("SELECT id FROM flags WHERE artwork_id = :id", [':id' => $post->artworkid])
+          || !$psm->hasdata("SELECT id FROM artworks WHERE id = :id", [':id' => $post->artworkid])) die;
+
+          $psm->insert('flags', [
+            'artwork_id' => $post->artworkid,
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'timeadded' => time()
+          ]);
+
+          $api->JSON();
+      },
 
   ];

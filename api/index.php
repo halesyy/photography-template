@@ -24,12 +24,18 @@
   | 4. Sunrise Rendering Engine
   */
 
+    // require_once "../application/config/constants.php";
+    require_once "../application/config/database.php";
+
     require_once "../application/modules/_App.php";
     require_once "../application/modules/PSM.php";
     require_once "../application/modules/Sunrise.php";
     require_once "../application/modules/Router.php";
-    require_once "../application/modules/Student.php";
-    require_once "../application/modules/Family.php";
+    // require_once "../application/modules/Student.php";
+    // require_once "../application/modules/Family.php";
+
+    // Google_Client.
+    // require_once "../application/modules/Google_Client/vendor/autoload.php";
 
   /*
   | Loading in API modules:
@@ -38,13 +44,16 @@
   | 3. Actual API Manager class
   */
 
+
     require_once "authentication/AuthenticationHandlers.php"; #//post
     require_once "serve/ServeHandlers.php"; #//get
-    require_once "APIPERSONAL.php"; #//for manager needing personal functions
     require_once "APIOverseer.php"; #//manager
 
     Router::Initialize();
-    $Overseer = new APIOverseer($Serve, $Authentication);
+
+    $psm = new PSM("{$config['database']['hostname']} {$config['database']['database']} {$config['database']['username']} {$config['database']['password']}");
+
+    $Overseer = new APIOverseer($Serve, $Authentication, $psm);
     $Overseer->Trigger();
 
   /**/

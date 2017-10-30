@@ -7,6 +7,25 @@
 <html lang="en">
   <head>
       <title>Macleay Photography | Jack Hales</title>
+
+      <meta property="og:type" content="website" />
+
+      <meta property="og:title" content="Macleay Valley Photography | Jack Hales">
+      <meta property="og:description" content="Macleay Photography provides beautiful artworks of photography and creation in the Macleay Valley and surrounding areas. Providing a platform to help get local photographers and artists recognized for their works.">
+      <meta property="og:image" content="https://macleayphotography.com/assets/images/bridge.jpg">
+      <meta property="og:url" content="https://macleayphotography.com/">
+      <meta name="twitter:card" content="summary_large_image">
+
+      <meta name="identifier-url" content="https://macleayphotography.com" />
+      <meta name="title" content="Macleay Photography" />
+      <meta name="description" content="Platform for presenting and discovering artworks from Macleay Valley and surrounding regions (Kempsey, Port Macquarie, Taree, Coffs Harbour) community artists and photographers." />
+      <meta name="keywords" content="macleay valley, macleay valley photos, macleay valley art, kempsey photos, kempsey art, port macquarie, port macquarie photos, coffs harbour, coffs harbour art, jack hales" />
+      <meta name="author" content="Jack Hales" />
+      <meta name="revisit-after" content="2 days" />
+      <meta name="language" content="EN" />
+      <meta name="copyright" content="© 2017 Macleay Photography" />
+      <meta name="robots" content="All" />
+
       <link rel="stylesheet" type="text/css" href="assets/css/all.min.css" />
       <link href="https://fonts.googleapis.com/css?family=Poppins|Raleway|Pacifico" rel="stylesheet">
       <script src="https://use.fontawesome.com/2880f76714.js"></script>
@@ -29,7 +48,7 @@
         }
       </script>
       <script>
-        $(window).on('load',function(){$('.content').equalHeights();$('.love-site').fadeIn(500);})
+        $(document).ready(function(){$('.row-1 .persist').equalHeights();$('.row-2 .persist').equalHeights();$('.row-3 .persist').equalHeights();$('.row-4 .persist').equalHeights();$('.love-site').fadeIn(500);})
       </script>
       <script>
         $(document).scroll(function(){
@@ -38,6 +57,25 @@
           });
         });
       </script>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-2138997004500515",
+          enable_page_level_ads: true
+        });
+      </script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108822305-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-108822305-1');
+      </script>
+
   </head>
   <body>
     <div class="Page-Landing">
@@ -64,21 +102,11 @@
         <article class="banner-6 whole"><h1></h1></article>
         <article class="banner-7 whole"><h1></h1></article>
         <nav class="bottom">
-          <a href="/submit-artwork">
-            <div class="link">
-              Submit Artwork
-            </div>
-          </a>
-          <a href="/get-started">
-            <div class="link">
-              Get Started
-            </div>
-          </a>
-          <a href="/about">
-            <div class="link">
-              About
-            </div>
-          </a>
+          <a href="/latest"><div class="link">Latest Artworks</div></a>
+          <a href="/about"><div class="link">About</div></a>
+          <a href="/artists"><div class="link">Artists</div></a>
+          <a href="/get-started"><div class="link">Get Started</div></a>
+          <a href="/submit-artwork"><div class="link">Submit Artwork</div></a>
         </nav>
       </section>
       <section class="container-fluid">

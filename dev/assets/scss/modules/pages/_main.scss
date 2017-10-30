@@ -1,0 +1,395 @@
+/*
+ * Contains the bare-bones classes that can be used
+ * on most pages, it's essentially the "header" for all
+ * CSS files.
+ * Most pages use the header as well as container styling,
+ * etc...
+ */
+
+.Page-Static {
+    .header {
+
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+        background: rgba(0,0,0,0.65);
+        width: 100%;
+        min-height: 7vh;
+        line-height: 7vh;
+        vertical-align: middle;
+
+        .branding {
+          padding-left: 100px;
+          font-size: 20px;
+          font-family: 'Pacifico';
+          color: white;
+          letter-spacing: 5px;
+          b {
+            color: $pink !important;
+          }
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+
+    }
+
+
+
+    .container, .container-fluid {
+
+        margin-top: 60px;
+        background: whitesmoke;
+        padding: 40px;
+        border-radius: 2px;
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+        .title {
+          font-family: 'Pacifico', Arial;
+          letter-spacing: 4px;
+          text-align: center;
+          margin-bottom: 50px;
+          font-size: 50px;
+          .small {
+            font-size: 18px;
+            font-family: 'Poppins';
+            letter-spacing: normal;
+            margin-top: 15px;
+          }
+          b {
+            color: $pink;
+          }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+/*
+ * ARTIST PAGE CSS
+ */
+.Page-Artist {
+
+    font-family: 'Poppins', Arial;
+
+    .color {
+      color: $pink;
+    }
+
+    .about-fa {
+      font-size: 2em;
+      color: darken(grey, 15%);
+      cursor: pointer;
+      margin-right: 10px;
+      &:hover {
+        color: black;
+      }
+    }
+
+    .white {
+      background: white !important;
+    }
+
+    .artist-title {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .artist-bio {
+      font-size: 18px;
+      margin-bottom: 20px;
+
+    }
+    .artist-image {
+      border: 2px;
+      box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+    }
+
+    .switcher {
+      a {
+        background: $pink;
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+        color: white;
+        padding: 10px 20px 10px 20px;
+        border-radius: 2px;
+      }
+    }
+
+
+    .title {
+      font-family: 'Poppins', Arial !important;
+      font-size: 30px !important;
+      margin: 0 !important;
+      letter-spacing: normal !important;
+      text-align: left !important;
+    }
+
+}
+
+
+
+
+
+
+/*
+ * ARTIST(S) PAGE
+ */
+.Page-Artists {
+
+    .artist {
+      background: white;
+      padding: 20px;
+      border: 2px;
+      box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+
+
+      .row {margin-left: 0 !important;margin-right: 0 !important;}
+      .artist-image {
+        padding-left: 0;
+        padding-right: 0;
+        img {
+          border: 2px;
+          box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+        }
+      }
+      .artist-content {
+        .artist-name {
+          a {
+            color: $pink;
+          }
+        }
+        .artist-bio {
+
+        }
+
+      }
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/*
+ * ARTWORK PAGE - FOR INDIVIDUAL ARTWORKS.
+ */
+.Page-Artwork {
+
+    .showoff {
+      img {
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+        border-radius: 2px;
+      }
+    }
+
+    .explain {
+      font-family: 'Poppins';
+      p {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      a, b {
+        color: $pink;
+      }
+      img {
+        margin-bottom: 20px;
+        border-radius: 2px;
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+      }
+    }
+    .vote-button-container {
+      text-align: center;
+      padding: 10px;
+      i {
+        padding-top: 5px;
+        &:hover {
+          color: $pink;
+          cursor: pointer;
+        }
+      }
+      .flag {
+        &:hover {
+          color: #c21f1f;
+        }
+      }
+    }
+    .container {
+      margin-top: 20px !important;
+    }
+    .notes {
+      h2 {
+        color: $pink;
+        font-family: 'Poppins', Arial;
+      }
+      .note {
+        margin: 10px;
+        border-radius: 2px;
+        padding: 15px;
+        font-family: 'Poppins', Arial;
+        border: solid silver 1px;
+        border-left: solid $pink 3px;
+        box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+    .liked {
+      cursor: default !important;
+      color: $pink !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*
+ * LATEST PAGE, all latest artworks being displayed.
+ */
+.Page-Latest {
+
+  article {
+    .title {
+      font-family: 'Poppins', Arial !important;
+      font-size: 30px !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * ABOUT PAGE, explaining the project to the clients
+ * and community.
+ */
+.Page-About {
+
+    p, h1, h2, h3, h4, h5, ul li {
+      width: 100%;
+      font-family: 'Poppins', Arial;
+      font-size: 22px;
+      text-align: justify;
+      padding-bottom: 20px;
+    }
+    .highlight {
+      background: $pink;
+      padding: 10px;
+      border-radius: 2px;
+      color: white;
+      width: auto;
+    }
+    a {
+      color: $pink;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * GET STARTED PAGE, explains how to join,
+ * converts customers to community members
+ */
+ .Page-GetStarted {
+       p, h1, h2, h3, h4, h5, ul li {
+         width: 100%;
+         font-family: 'Poppins', Arial;
+         font-size: 20px;
+         text-align: justify;
+       }
+       .highlight {
+         background: $pink;
+         padding: 10px;
+         border-radius: 2px;
+         color: white;
+         width: auto;
+       }
+       a {
+         color: $pink;
+       }
+
+ }
+
+
+
+
+
+
+
+
+ /*
+  * SUBMISSION PAGE, for submitting new uploads
+  * for existing community members.
+  */
+ .Page-Submission {
+
+
+         .left {
+             .inner {
+                 padding: 20px;
+                 box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+                 background: white;
+             }
+
+             hr {
+               border-bottom: solid $pink 1px;
+               width: 95%;
+             }
+         }
+
+         .right {
+           .inner {
+             padding: 20px;
+             box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+             background: white;
+           }
+         }
+         .info-standard {
+             padding: 20px;
+             box-shadow: rgba(0,0,0,0.14) 0px 2px 2px 0px, rgba(0,0,0,0.2) 0px 3px 1px -2px, rgba(0,0,0,0.12) 0px 1px 5px 0px;
+             background: white;
+         }
+         .margin-bottom {
+             margin-bottom: 40px;
+         }
+
+ }

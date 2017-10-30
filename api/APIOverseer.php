@@ -1,5 +1,5 @@
 <?php
-  class APIOverseer extends APIPERSONAL {
+  class APIOverseer {
       /*
       | ==================================================
       | The API Overseer is the method which gets loaded
@@ -15,6 +15,8 @@
       protected $Handlers = [];
       protected $CacheFormData = [];
 
+      public $psm;
+
     // *****************************************************
 
       /*
@@ -24,20 +26,40 @@
       | Sorts the incoming request and replies with the appropriate method
       | dictated from internal conditioning.
       */
-      public function __construct($Serve, $Authentication) {
+      public function __construct($Serve, $Authentication, $psm) {
+        $this->psm = $psm;
+
         $this->Handlers['serve'] = $Serve;
         $this->Handlers['auth']  = $Authentication;
       }
 
-
       /*
-      | Called when there's no SESSION[application], time to build it for
-      | the client! Contains all the data the user has submitted for the
-      | application/register so far.
+      | @param None
+      | To gather the PSM data and return a PSM object.
       */
-      protected function BuildFormApplicationScheme() {
-        $_SESSION['parents']  = [];
-        $_SESSION['students'] = [];
+      public function psm() {
+        return $this->psm;
+      }
+
+      public function signed_in() {
+        if (!isset($_SESSION['id'])) die;
+        else {
+          # make sure id is real
+          $user_id = $_SESSION['id'];
+          if ($this->psm()->hasdata_specific('users', 'user_id', $user_id)) return true;
+          else die;
+        }
+      }
+      /*
+      | @param None
+      | Returning the PSM Auth object.
+      */
+      public function auth($psm) {
+        return new Auth( 'gost', 'das89j2aksndjkas', $psm, [
+          'table' => 'users',
+          'first' => 'email',
+          'secnd' => 'password'
+        ] );
       }
 
 
@@ -52,7 +74,7 @@
       | POST API for usage.
       */
       public function Trigger() {
-        if (!isset($_SESSION['parents'], $_SESSION['students'])) $this->BuildFormApplicationScheme();
+        // if (!isset($_SESSION['form'])) $this->BuildFormApplicationScheme();
 
         if (Router::Second() == 'get') {
           if ( isset($this->Handlers['serve'][Router::Third()]) ) {
@@ -150,12 +172,47 @@
       /*
       | Reports an API issue in JSON format.
       */
-      public function Error($message) {
-        echo json_encode([
+      public function Error($message, $code = false) {
+        $json = json_encode([
           'success' => 'false',
-          'message' => $message
+          'message' => $message,
+          'code'    => ($code !== false)? $code: "ERROR"
         ]);
+        $json = utf8_encode($json);
+        print $json;
         die;
+      }
+
+      public function Session() {
+        echo "session\n<pre>", print_r($_SESSION) ,"</pre>\n\n";
+      }
+
+      public function TimeReference($before, $after) {
+        $difference = $after - $before;
+        $seconds    = $difference;
+          $minute = 60;
+          $hour   = $minute * $minute;
+          $day    = $hour * 24;
+          $week   = $day * 7;
+        if (floor($difference / $week) != 0) {
+          $ago  = round($difference / $week);
+          return ($ago == 1)? "$ago week ago": "$ago weeks ago";
+        }
+        else if (floor($difference / $day) != 0) {
+          $ago = round($difference / $day);
+          return ($ago == 1)? "$ago day ago": "$ago days ago";
+        }
+        else if (floor($difference / $hour) != 0) {
+          $ago = round($difference / $hour);
+          return ($ago == 1)? "$ago hour ago": "$ago hours ago";
+        }
+        else if (floor($difference / $minute) != 0) {
+          $ago = round($difference / $minute);
+          return ($ago == 1)? "$ago minute ago": "$ago minutes ago";
+        }
+        else {
+          return ($seconds == 1)? "$seconds second ago (wow)": "$seconds seconds ago";
+        }
       }
 
       /*
@@ -164,8 +221,9 @@
       public function JSON($array = []) {
         $default = ['success' => true];
         $array   = array_merge($array, $default);
+        $json = json_encode($array);
+        $json = utf8_encode($json);
         echo json_encode($array);
         die;
       }
-
   }

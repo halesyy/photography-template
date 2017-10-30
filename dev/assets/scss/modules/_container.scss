@@ -19,20 +19,35 @@
           .title {
             a {
               color: #212529;
-              text-decoration: none;
+              // text-decoration: none;
             }
             padding: 20px 40px 0 40px;
-            font-size: 40px;
+            font-size: 30px;
             font-family: 'Poppins', Arial;
           }
-          .description {
+          .by {
+            padding: 20px 40px 40px 40px;
             a {
               color: $pink;
               text-decoration: none;
             }
-            padding: 0 40px 40px 40px;
+            .likes {
+              float: right !important;
+              color: $pink !important;
+              font-weight: bold !important;
+              font-size: 16px !important;
+            }
+          }
+          .main {
+            font-size: 18px;
+            line-height: 18px;
+            max-height: 56px;
+            overflow-y: hidden;
+          }
+          .description {
+            padding: 20px 40px 0 40px;
             font-family: 'Poppins';
-            text-align: justify;
+            // text-align: justify;
           }
 
         }
@@ -49,7 +64,7 @@
           font-family: 'Poppins', Arial;
           color: $pink !important;
           a {
-            color: $pink !important; 
+            color: $pink !important;
             text-decoration: none;
           }
         }
@@ -59,7 +74,6 @@
         }
 
 }
-
 
 .aside {
 

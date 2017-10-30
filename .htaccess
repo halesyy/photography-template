@@ -15,5 +15,3 @@ RewriteRule ^(.*)$ entry.php?/$1 [L]
 #RewriteCond %{HTTPS} off
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 #Redirection code Ends
-
-RewriteRule ^/?\.ftpconfig$ - [F,L]

@@ -3,67 +3,31 @@
 
   $Serve = [
 
-      'parent-guardians' => function($Sunrise) {
+      'like-artwork' => function ($Sunrise, $api) {
+        #/api/get/like-artwork/id
 
-          $Sunrise->Render('Pages/Parent_Guardians', [
+          if (Router::Fourth() === false) header('Location: /latest');
+          if (!is_numeric(Router::Fourth())) header('Location: /latest');
 
-          ], '..');
+          $id  = Router::Fourth();
+          $psm = $api->psm();
 
-      },
-
-      'students' => function($Sunrise) {
-
-          $Sunrise->Render('Pages/Students', [
-
-          ], '..');
-
-      }
-
-  ];
-
-  $Serve_Pieces = [
-
-      'fillout' => function($Sunrise, $api) {
-        #/api/get/fillout/{student/parent-guardians}
-        if (!in_array(Router::Fourth(), array_keys($api->conversion_s))) $api->error('Reference not in converter as key.');
-        else $type = Router::Fourth();
-
-        if (count($_SESSION[ $api->conversion_s[$type] ]) != 0) {
-          $forms = [];
-          foreach ($_SESSION[ $api->conversion_s[$type] ] as $index => $Object) {
-            array_push($forms, [ 'id'   => $Object['id'],
-              'body' => $Sunrise->Mini("Page_Pieces/{$api->conversion_f[$type]}", '..', [
-                'id' => $Object['id'],
-                'data' => $Object['data']
-              ])
+          // If so, has data currently for the artwork.
+          if ($psm->hasdata("SELECT id FROM artwork_likes WHERE artwork_id = :id AND ip = :ip", [
+            ':id' => $id,
+            ':ip' => $_SERVER['REMOTE_ADDR']
+          ])) {$api->JSON();}
+          else {
+          // Not so, will continue adding into the database.
+            $psm->insert('artwork_likes', [
+              'artwork_id' => $id,
+              'ip' => $_SERVER['REMOTE_ADDR'],
+              'timeadded' => time()
             ]);
-          }//
-          $api->JSON([ 'forms' => $forms ]);
-        }
+            $api->JSON(['like' => true]);
+          }
 
-        else {
-          $r = $api->create_new_object($Sunrise, $type);
-          $api->JSON(['forms' => [
-            ['id' => $r['id'], 'body' => $r['form']]
-          ]]);
-        }
-      },
 
-      'new' => functioN($Sunrise, $api) {
-        if (!in_array(Router::Fourth(), array_keys($api->conversion_s))) $api->error('Reference not in converter as key.');
-        else $type = Router::Fourth();
-
-        $r = $api->create_new_object($Sunrise, $type);
-        $api->JSON([
-          'forms' => [[
-            'id'   => $r['id'],
-            'body' => $r['form']
-          ]]
-        ]);
       }
 
-
-
   ];
-
-  $Serve = array_merge($Serve, $Serve_Pieces);

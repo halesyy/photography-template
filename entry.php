@@ -40,7 +40,14 @@
 
   //************************************************************************************
 
-
+    // For HTTPS redirection.
+    // $protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,5))=='https'?'https':'http';
+    // $protocol = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
+    // if ($protocol != 'https') {
+    //   $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    //   header("Location: $redirect");
+    //   die;
+    // }
 
   /*
   | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
