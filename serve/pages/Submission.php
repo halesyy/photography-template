@@ -54,7 +54,7 @@
       <div class="container">
         <h1 class="title"><div>Submit <b>your artwork</b></div> <div class="small">Show the community</div></h1>
         <div class="info-standard margin-bottom">
-          If you have not yet got yourself set up with a reference and passphrase to submit work, please go <a href="/get-setup">here</a> to get yourself setup and submitting your art! If you're still skeptical, check out <a href="/why-join">why join</a> to understand the advantage.
+          If you have not yet got yourself set up with a reference and passphrase to submit work, please check the <a href="/get-started">get started</a> page to get yourself setup and good to go submitting your art! <!--If you're still skeptical, check out <a href="/why-join">why join</a> to understand the advantage.-->
         </div>
         <div class="row">
           <div class="col-lg-9 col-sm-12 left margin-bottom">
@@ -64,7 +64,13 @@
                 <?=$Error?>
                 <?=$Success?>
 
-                <div class="row">
+                <?php if (isset($_SESSION['reference']) && isset($_SESSION['passphrase'])): ?>
+                  <?php
+                    $leonardo = new Leonardo($psm);
+                    $leonardo->feed($_SESSION['reference'], 'reference'); ?>
+                  <h3>Logged in as <strong><?=$leonardo->data['name']?></strong></h3>
+                <?php else: ?>
+                  <div class="row">
                     <div class="col-lg-6 col-sm-12">
                       <div class="label">REFERENCE:</div>
                       <input required type="text" name="reference" value="<?=(isset($_REQUEST['reference']))?$_REQUEST['reference']:"";?>" />
@@ -73,7 +79,8 @@
                       <div class="label">PASSPHRASE:</div>
                       <input required type="password" name="passphrase"  value="<?=(isset($_REQUEST['passphrase']))?$_REQUEST['passphrase']:"";?>" />
                     </div>
-                </div>
+                  </div>
+                <?php endif; ?>
 
                 <hr />
 
@@ -109,6 +116,9 @@
           </div>
         </div>
       </div>
+
+
+
       <?=$Footer?>
     </div>
 

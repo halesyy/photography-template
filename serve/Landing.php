@@ -84,7 +84,9 @@
           <div class="hidden-socials">
             <span>Why not <b>share</b> them <b>around</b>?</span>
             <i class="fa fa-facebook" aria-hidden="true" onclick="window.open('https://www.facebook.com/jek.hales', '_facebook');"></i>
-            <i class="fa fa-twitter" aria-hidden="true" onclick="window.open('https://twitter.com/jeklington', '_twitter');"></i>
+            <i class="fa fa-twitter" aria-hidden="true" onclick="window.open(
+              'http://twitter.com/share?text=Take a glimpse at the beautiful Macleay Valley! Artworks and photographs.&url=https://macleayphotography.com'
+            , '_twitter');"></i>
 
           </div>
           <div class="branding">
@@ -113,7 +115,7 @@
         <div class="row">
             <div class="col-lg-9 col-sm-12">
               <div class="row">
-                <h1 class="boxed-title">Recent Photos</h1>
+                <h1 class="boxed-title">Popular Artworks</h1>
                   <?=$Recent?>
                 <div style="clear: both;"></div>
               </div>

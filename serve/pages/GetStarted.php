@@ -51,43 +51,89 @@
   <body>
 
       <div class="Page-GetStarted Page-Static">
-
           <header class="header">
             <span class="branding"><a href="/">the <b>macleay</b></a></span>
           </header>
 
           <div class="container">
-
-              <h1 class="title"><div>Let's get you <b>started</b></div><div class="small">So we can get you into the community.</div></h1>
+              <h1 class="title"><div>Let's get you <b>started</b></div><div class="small">So we can get you into the community</div></h1>
 
               <div class="row">
-                  <p>To start uploading your artworks to <b>Macleay Photography</b>, you need to first aquire a <b>reference</b> and <b>passphrase</b>.</p>
-                  <p>In order to get one of these, to keep the community safe and secure, I would like an <b>email from you</b>! It will require nothing deep of yourself besides a quick discussion on what you do and so I can get aquaint with you.</p>
-
-                  <p class="highlight">Email me at <b>halesyy@gmail.com</b></p>
-
-                  <p>Be prepared for:</p>
-                  <ul>
-                      <li>A professional image of yourself (for your artist profile)</li>
-                      <li>Your full name (first and last)</li>
-                      <li>A small description of yourself (bio)</li>
-                      <li>Social media or website links (whichever you want referenced to)</li>
-                  </ul>
-
-                  <p><a href="/about"><b>More information on Macleay Photography</b></a></p>
-
-                  <p><small><b>Note:</b> Data collected is NOT commercially re-used or sold, all data is used for <b>Macleay Photography</b> ONLY.</small></p>
+                <p>To start uploading your artworks to <b>Macleay Photography</b>, you need to first aquire a <b>reference</b> and <b>passphrase</b>. These are essentially your username and password, make sure you write them down!</p>
+                <p>You can fill out the form below to set your reference and passphrase, but you will not be verified till I review your profile and email you back at the email supplied. This helps keep the community safe and secure.</p>
+                <p class="highlight"><a href="/about" style="color: white;">What is <b>Macleay Photography</b>?</a></p>
+                <p><small><b>Note:</b> Data that is collected is NEVER commercially re-used or sold, all data is used for <b>Macleay Photography</b> ONLY and EVER.</small></p>
               </div>
+          </div>
+          <div class="container important">
+
+              <form method="post" enctype="multipart/form-data" class="formation">
+
+                  <h2>Your artist profile</h2>
+
+                  <?=($Success)?>
+                  <?=($Error)?>
+
+                  <div class="label">EMAIL FOR FUTURE CONTACT:</div>
+                  <input required type="email" name="email" value="<?=(isset($_REQUEST['email']))?$_REQUEST['email']:'';?>" placeholder="(no trash mail will be sent)" />
+                  <small style="width: 100%;">After you submit your artist profile, you will get an email from <strong>halesyy@gmail.com</strong> to confirm everything and make everything is good, he will also welcome you!</small>
+
+                  <hr />
+
+                  <div class="row">
+                      <div class="col-lg-4 col-sm-12" style="margin-bottom: 20px;">
+                        <div class="label">FULL NAME:</div>
+                        <input required type="text" value="<?=(isset($_REQUEST['name']))?$_REQUEST['name']:'';?>" name="name" placeholder="e.g. (John Doe)" />
+                      </div>
+                      <div class="col-lg-4 col-sm-12" style="margin-bottom: 20px;">
+                        <div class="label">REFERENCE (only letters & numbers):</div>
+                        <input required type="text" value="<?=(isset($_REQUEST['reference']))?$_REQUEST['reference']:'';?>" name="reference" placeholder="(your unique username)" />
+                      </div>
+                      <div class="col-lg-4 col-sm-12" style="margin-bottom: 20px;">
+                        <div class="label">PASSPHRASE:</div>
+                        <input required type="password" value="<?=(isset($_REQUEST['passphrase']))?$_REQUEST['passphrase']:'';?>" name="passphrase" placeholder="(similar to a password, so we know it's you)" />
+                      </div>
+                  </div>
+
+                  <hr />
+
+                  <div class="label">BIO:</div>
+                  <textarea name="bio" placeholder="(small piece of information about yourself, doesn't have to be much! interests, hobbies, age, what you do, etc.)"><?=(isset($_REQUEST['bio']))?$_REQUEST['bio']:'';?></textarea>
+
+                  <hr />
+
+                  <div class="row">
+                      <div class="col-lg-4 col-sm-12" style="margin-bottom: 20px;">
+                        <div class="label">FACEBOOK LINK:</div>
+                        <input type="text" name="facebook" value="<?=(isset($_REQUEST['facebook']))?$_REQUEST['facebook']:'';?>" placeholder="(optional, example: link to Facebook personal OR Facebook page for your art)" />
+                      </div>
+                      <div class="col-lg-4 col-sm-12" style="margin-bottom: 20px;">
+                        <div class="label">TWITTER LINK:</div>
+                        <input type="text" name="twitter" value="<?=(isset($_REQUEST['twitter']))?$_REQUEST['twitter']:'';?>" placeholder="(optional)" />
+                      </div>
+                      <div class="col-lg-4 col-sm-12" style="margin-bottom: 20px;">
+                        <div class="label">INSTAGRAM LINK:</div>
+                        <input type="text" name="instagram" value="<?=(isset($_REQUEST['instagram']))?$_REQUEST['instagram']:'';?>" placeholder="(optional)" />
+                      </div>
+                  </div>
+
+                  <hr />
+
+                  <div class="label">PICTURE OF YOURSELF:</div>
+                  <input required type="file" name="photo" />
+                  <small>This is used on your artist profile, for example: <a href="https://macleayphotography.com/artist/jackhales">https://macleayphotography.com/artist/jackhales</a></small>
+
+                  <hr />
+
+                  <div style="text-align: center;">
+                    <input type="submit" name="submit" value="Create artist profile" />
+                  </div>
+              </form>
 
           </div>
 
-
           <?=$Footer?>
-
       </div>
-
-
-
 
   </body>
 </html>

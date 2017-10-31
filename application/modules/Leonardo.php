@@ -30,6 +30,63 @@
 
       }
 
+      public function exists($artist_get, $by = 'id') {
+
+          $psm = $this->psm;
+          return $psm->hasdata("SELECT id FROM artists WHERE $by = :by", [':by' => $artist_get]);
+
+      }
+
+      public function safe_reference($reference) {
+
+          return (ctype_alnum($reference))?true:false;
+
+      }
+
+      public function authenticate($detail_array = false) {
+
+          if (isset($_SESSION['reference']) && isset($_SESSION['passphrase'])) {
+            $reference  = $_SESSION['reference'];
+            $passphrase = $_SESSION['passphrase'];
+            $save_to_session = false;
+          }
+          else if (isset($_REQUEST['reference']) && $_REQUEST['passphrase']) {
+            $reference  = $_REQUEST['reference'];
+            $passphrase = $_REQUEST['passphrase'];
+            $save_to_session = true;
+          }
+          else if ($detail_array !== false) {
+            $reference  = $detail_array[0];
+            $passphrase = $detail_array[1];
+            $save_to_session = false;
+          }
+          else {
+            die ('No reference or passphrase found. Please contact <b>halesyy@gmail.com</b>');
+          }
+
+
+          if ($this->psm->hasdata("SELECT id FROM artists WHERE reference = :ref AND passphrase = :pas", [
+            
+            ':ref' => $reference,
+            ':pas' => $passphrase
+            
+          ])) {
+
+              if ($save_to_session) {
+                $_SESSION['reference']  = $reference;
+                $_SESSION['passphrase'] = $passphrase;
+              }
+              return ['error' => false, 'reference' => $reference, 'passphrase' => $passphrase, 'message' => 'Successfully authenticated.'];
+
+          }
+          else {
+
+              return ['error' => true, 'reference' => '', 'passphrase' => '', 'message' => 'Sorry, those details were incorrect.'];
+
+          }
+
+      }
+
       public function photo() {
 
           return "/assets/artists/{$this->data['reference']}/profile/{$this->data['photo']}";
